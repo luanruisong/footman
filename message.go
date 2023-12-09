@@ -9,10 +9,10 @@ import (
 
 type (
 	message struct {
-		topicName    *string
-		offset       *uint64
-		ts, originTs *int64
-		data         any
+		topicName *string
+		offset    *uint64
+		ts        *int64
+		data      any
 	}
 )
 
@@ -38,10 +38,6 @@ func (m *message) Data() any {
 
 func (m *message) Ts() int64 {
 	return *m.ts
-}
-
-func (m *message) OriginTs() int64 {
-	return *m.originTs
 }
 
 func NewMessage(topic *string, data any) *message {
